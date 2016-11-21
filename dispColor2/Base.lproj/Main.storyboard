@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="dispColor2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,83 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="RGB" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DmD-C6-InG">
+                                <rect key="frame" x="166" y="165" width="34" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="bKK-hr-VpR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJ5-Cl-fvL">
+                                <rect key="frame" x="160" y="224" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="R80-jA-ra4" kind="presentation" id="yv4-o6-36k"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="BJ5-Cl-fvL" firstAttribute="top" secondItem="DmD-C6-InG" secondAttribute="bottom" constant="80" id="1ag-XV-P5m"/>
+                            <constraint firstItem="BJ5-Cl-fvL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="250" id="1i5-VI-Cn3"/>
+                            <constraint firstItem="BJ5-Cl-fvL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="144" id="4nr-91-nwd"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="DmD-C6-InG" secondAttribute="bottom" constant="509" id="Hk2-71-XhF"/>
+                            <constraint firstItem="BJ5-Cl-fvL" firstAttribute="top" secondItem="DmD-C6-InG" secondAttribute="bottom" constant="80" id="Piy-F1-Yh2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BJ5-Cl-fvL" secondAttribute="trailing" constant="250" id="TJV-9D-W0N"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DmD-C6-InG" secondAttribute="trailing" id="bKG-nC-QNf"/>
+                            <constraint firstItem="DmD-C6-InG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="mLH-eH-YlP"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="BJ5-Cl-fvL" secondAttribute="bottom" constant="382" id="n9m-aO-rmx"/>
+                            <constraint firstItem="DmD-C6-InG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="v4N-eA-LF4"/>
+                            <constraint firstItem="BJ5-Cl-fvL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yBU-sF-Wyu"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="colorLabel" destination="DmD-C6-InG" id="oLp-Z9-Qdb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Color View Controller-->
+        <scene sceneID="DTQ-BT-3X3">
+            <objects>
+                <viewController id="R80-jA-ra4" customClass="ColorViewController" customModule="dispColor2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fs1-Xp-Dn7"/>
+                        <viewControllerLayoutGuide type="bottom" id="bzo-Q7-1ii"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GkF-He-fdZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4yn-sk-LeX">
+                                <rect key="frame" x="0.0" y="7" width="52" height="30"/>
+                                <state key="normal" title="뒤로가기"/>
+                                <connections>
+                                    <segue destination="zpl-Od-wKd" kind="unwind" unwindAction="returnTopWithSegue:" id="Ofg-QQ-xES"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4yn-sk-LeX" firstAttribute="leading" secondItem="GkF-He-fdZ" secondAttribute="leadingMargin" constant="20" id="6lN-R8-Fq5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4yn-sk-LeX" secondAttribute="trailing" constant="287" id="Axj-P0-9Eg"/>
+                            <constraint firstItem="4yn-sk-LeX" firstAttribute="top" secondItem="GkF-He-fdZ" secondAttribute="topMargin" constant="20" id="Rc6-QO-i9P"/>
+                            <constraint firstItem="bzo-Q7-1ii" firstAttribute="top" secondItem="4yn-sk-LeX" secondAttribute="bottom" constant="597" id="TT5-Ry-DbW"/>
+                            <constraint firstItem="4yn-sk-LeX" firstAttribute="top" secondItem="GkF-He-fdZ" secondAttribute="topMargin" constant="20" id="g7f-0o-qht"/>
+                            <constraint firstItem="bzo-Q7-1ii" firstAttribute="top" secondItem="4yn-sk-LeX" secondAttribute="bottom" constant="597" id="lqy-jS-4ba"/>
+                            <constraint firstItem="4yn-sk-LeX" firstAttribute="leading" secondItem="GkF-He-fdZ" secondAttribute="leadingMargin" constant="20" id="vz4-I9-cxA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4yn-sk-LeX" secondAttribute="trailing" constant="287" id="yIx-Lz-Z9f"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u51-g1-N0X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="zpl-Od-wKd" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="822" y="139"/>
         </scene>
     </scenes>
 </document>
